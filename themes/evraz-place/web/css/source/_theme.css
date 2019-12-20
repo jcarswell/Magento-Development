@@ -1,0 +1,6 @@
+@evrazplace-orange: rgb(245,128,38);
+@real-main: @evrazplace-orange;
+
+@footer__background: @real-main;
+@footer__color: @color-white;
+@footer__border-color: @color-white;

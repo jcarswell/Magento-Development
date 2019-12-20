@@ -1,0 +1,8 @@
+@evrazplace-orange: rgb(245,128,38);
+@cfps-blue: #002d6d;
+@cfps-wheat: #d7ac28;
+@real-main: @cfps-blue;
+
+@footer__background: @real-main;
+@footer__color: @color-white;
+@footer__border-color: @color-white;

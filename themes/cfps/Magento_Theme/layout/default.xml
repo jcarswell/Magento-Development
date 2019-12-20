@@ -1,0 +1,54 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+                <argument name="logo_img_width" xsi:type="number">237</argument>
+                <argument name="logo_img_height" xsi:type="number">115</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="footer">
+            <container name="footer_about" htmlTag="div" htmlClass="border-left col-2">
+                <block class="Magento\Framework\View\Element\Template" name="footer-about"
+                    template="Magento_Theme::html/footer.phtml" before="footer_links">
+                </block>
+            </container>
+            <container name="footer_links" htmlTag="div" htmlClass="col-2">
+                <container name="footer_links_block" htmlTag="ul" htmlClass="footer links">
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="privacy-policy">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Privacy Policy</argument>
+                            <argument name="path" xsi:type="string"><![CDATA[https://www.evrazplace.com/privacy-policy]]></argument>
+                            <argument name="attributes" xsi:type="array">
+                                <item name="target" xsi:type="string">_blank</item>
+                            </argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="terms-and-conditions">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Terms and Conditions</argument>
+                            <argument name="path" xsi:type="string">terms-and-conditions</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Html\Link\Current" name="contact-us-link">
+                        <arguments>
+                            <argument name="label" xsi:type="string">Contact Us</argument>
+                            <argument name="path" xsi:type="string">contact</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="advanced-search-link" remove="true" />
+        <referenceBlock name="search-term-popular-link" remove="true" />
+        <referenceBlock name="catalog-search-advanced-link" remove="true" />
+        <referenceBlock name="wishlist_sidebar" remove="true" />
+        <referenceBlock name="catalog.compare.sidebar" remove="true" />
+        <referenceBlock name="report.bugs" remove="true" />
+        <referenceBlock name="form.subscribe" remove="true" />
+
+        <move element="copyright" destination="before.body.end"/>
+    </body>
+</page>
+

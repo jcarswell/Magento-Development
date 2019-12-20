@@ -1,0 +1,18 @@
+// /**
+// * @package real/evrazplace
+// * @author Josh Carswell <jcarswell@evrazplace.com>
+// * @copyright 2018 The Regina Exhibition Association Ltd.
+// */
+
+//
+//  Common
+//  _____________________________________________
+
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m), print {
+    .content {
+        .page-layout-1column .product-info-main { width: 100%; }
+        .product-info-main { float: none; }
+        .product-info-main .product-add-form { max-width: 744px; }
+    }
+}

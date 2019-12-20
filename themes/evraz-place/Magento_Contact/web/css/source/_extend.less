@@ -1,0 +1,21 @@
+// /**
+// * @package real/evrazplace
+// * @author Josh Carswell <jcarswell@evrazplace.com>
+// * @copyright 2018 The Regina Exhibition Association Ltd.
+// */
+
+//
+//  Common
+//  _____________________________________________
+
+@evrazplace-orange: rgb(245,128,38);
+@real-main: @evrazplace-orange; 
+
+& when (@media-common = true) {
+    .action.primary {
+        &, &:hover, &:active, &:focus {
+            background: @real-main;
+            border-color: @real-main;
+        }
+    }
+}
