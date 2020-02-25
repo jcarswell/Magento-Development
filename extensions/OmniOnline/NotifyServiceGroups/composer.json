@@ -1,0 +1,26 @@
+{
+    "name": "OmniOnline/NotifyServiceGroups",
+    "description": "Notify the appropriate service group(s) when a service request order is completed",
+    "authors": [
+        {
+            "name": "OmniOnline",
+            "email": "contact@omnionline.net",
+            "homepage": "https://omnionline.net"
+        }
+    ],
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "php": "~5.6.0|7.0.2|~7.0.6"
+    },
+    "type": "magento2-module",
+    "version": "1.0.2",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "OmniOnline\\NotifyServiceGroups\\": ""
+        }
+    }
+}

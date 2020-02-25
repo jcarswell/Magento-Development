@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="extended_sales_reports" translate="label" sortOrder="500">
+            <label>Extended Sales Reports</label>
+        </tab>
+        <section id="extended_sales_reports_notification_settings" translate="label" sortOrder="130" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Notification Settings</label>
+            <tab>extended_sales_reports</tab>
+            <resource>OmniOnline_ExtendedSalesReports::notification_config</resource>
+            <group id="extended_sales_reports_weekly" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Weekly Sales Report</label>
+                <field id="extended_sales_reports_weekly_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Email</label>
+                    <comment>A comma-separated list of email addresses to send the weekly sales report to.</comment>
+                </field>
+                <field id="extended_sales_reports_weekly_store" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Store</label>
+                    <source_model>OmniOnline\ExtendedSalesReports\Model\Config\Source\StoreList</source_model>
+                    <comment>Restrict to sales from this store.</comment>
+                </field>
+                <field id="extended_sales_reports_weekly_category" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Category</label>
+                    <source_model>OmniOnline\ExtendedSalesReports\Model\Config\Source\CategoryList</source_model>
+                    <comment>Restrict to sales from this category.</comment>
+                </field>
+                <field id="extended_sales_reports_weekly_include_custom" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Include custom fields?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Whether to include custom product fields in the attached spreadsheet.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

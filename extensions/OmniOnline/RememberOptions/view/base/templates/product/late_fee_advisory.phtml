@@ -1,0 +1,12 @@
+<?php
+    $product = $block->getProduct();
+    if($product->getData('late_fee_applies')) {
+        $interval = $product->getData('late_fee_interval_days');
+        $percentage = $product->getData('late_fee_percentage');
+?>    
+<div class="product-late-fee-advisory">
+    This item must be reserved in advance. If you request this item on fewer than <?php echo $interval; ?> days notice, a <?php echo $percentage; ?>% late fee will apply.
+</div>
+<?php 
+    }
+?>

@@ -1,0 +1,60 @@
+<p>This page will allow you to produce an extended report in CSV format of items sold during a particular period, including any customisable options on those items.</p>
+
+<form id="extended-sales-report-form" method="POST" action="<?php echo $this->getUrl('*/*/run'); ?>">
+    <input name="form_key" type="hidden" value="<?php echo $block->getFormKey(); ?>">
+    <table class="form-list" style="border-spacing: 5px; border-collapse: separate">
+        <colgroup class="label"></colgroup>
+        <colgroup class="value"></colgroup>
+        <tbody>
+            <tr id="row_store">
+                <td class="label"><label for="stores"><span><?php echo __('Store'); ?></span></label></td>
+                <td class="value">
+                    <select name="store" id="store" class="control-select">
+                        <option value="">All stores</option>
+                        <?php foreach ($this->getStores() as $store): ?>
+                            <option value="<?php echo $store->getId(); ?>"><?php echo $store->getWebsite()->getName(); ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+            <tr id="row_category">
+                <td class="label"><label for="stores"><span><?php echo __('Category'); ?></span></label></td>
+                <td class="value">
+                    <select name="category" id="category" class="control-select">
+                        <option value="">All categories</option>
+                        <?php foreach ($this->getCategories() as $category): ?>
+                            <option value="<?php echo $category->getId(); ?>"><?php echo $category->getName(); ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </td>
+            </tr>
+            <tr id="row_start_date">
+                <td class="label"><label for="start_date"><span><?php echo __('Start Date'); ?></span></label></td>
+                <td class="value"><input name="start_date" id="start_date" class="control-text datepicker" type="text" value="<?php echo date('Y-m-d', strtotime('-1 month')); ?>"></td>
+            </tr>
+            <tr id="row_end_date">
+                <td class="label"><label for="end_date"><span><?php echo __('End Date'); ?></span></label></td>
+                <td class="value"><input name="end_date" id="end_date" class="control-text datepicker" type="text" value="<?php echo date('Y-m-d'); ?>"></td>
+            </tr>
+            <tr id="row_include_custom">
+                <td class="label"><label for="include_custom"><span><?php echo __('Include Custom Fields?'); ?></span></label></td>
+                <td class="value">
+                    <input name="include_custom" id="include_custom" type="hidden" value="0" checked>
+                    <input name="include_custom" id="include_custom" type="checkbox" value="1" checked>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="run_report" class="action-default scalable primary">Run Report</button>
+</form>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/calendar'
+    ], function($) {
+        $('.datepicker').datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+</script>

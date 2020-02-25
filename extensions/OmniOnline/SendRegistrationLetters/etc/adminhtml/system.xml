@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pdf_letter_templates" translate="label" sortOrder="600">
+            <label>PDF Letter Templates</label>
+        </tab>
+        <section id="pdf_letter_templates_international" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>International Visitor Registration</label>
+            <tab>pdf_letter_templates</tab>
+            <resource>OmniOnline_SendRegistrationLetters::international_config</resource>
+            <group id="pdf_letter_templates_international_email" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Email Contents</label>
+                <field id="pdf_letter_templates_international_email_subject" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Subject</label>
+                    <comment>The subject line of the email containing the Letter of Offer PDF.</comment>
+                </field>
+                <field id="pdf_letter_templates_international_email_body" translate="label" type="editor" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>HTML Message</label>
+                    <comment>The HTML body of the email containing the Letter of Offer PDF. You can enclose field names from the product description in square brackets to insert them into the text. e.g., if there's a field called "Name", you could insert it into the email by entering [Name]. The special value [Current Date] prints the date on which the email generated.</comment>
+                </field>
+                <field id="pdf_letter_templates_international_email_bcc" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>BCC Address</label>
+                    <comment>If provided, copies of the email and its attachment will be BCCed to this address.</comment>
+                </field>
+            </group>
+            <group id="pdf_letter_templates_international_pdf" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>PDF Contents</label>
+                <field id="pdf_letter_templates_international_pdf_filename" translate="label" type="editor" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>PDF Filename</label>
+                    <comment>The filename that will appear for the PDF attachment on the email.</comment>
+                </field>
+                <field id="pdf_letter_templates_international_pdf_template" translate="label" type="editor" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>HTML Template</label>
+                    <comment>The HTML template to use when generating the Letter of Offer PDF. You can enclose field names from the product description in square brackets to insert them into the text. e.g., if there's a field called "Name", you could insert it into the PDF by entering [Name]. The special value [Current Date] prints the date on which the PDF was generated.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

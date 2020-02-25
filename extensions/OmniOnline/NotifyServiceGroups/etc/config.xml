@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <service_groups_notification_settings>
+            <email_addresses>
+                <qcx_parade_email></qcx_parade_email>
+                <qcx_exhibitor_email>jcarswell@evrazplace.com</qcx_exhibitor_email>
+                <it_services_email>jcarswell@evrazplace.com</it_services_email>
+                <electrical_services_email>jcarswell@evrazplace.com</electrical_services_email>
+            </email_addresses>
+        </service_groups_notification_settings>
+    </default>
+</config>
+

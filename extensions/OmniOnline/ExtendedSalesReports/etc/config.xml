@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <extended_sales_reports_notification_settings>
+            <extended_sales_reports_weekly>
+                <extended_sales_reports_weekly_email>jcarswell@evrazplace.com</extended_sales_reports_weekly_email>
+                <extended_sales_reports_weekly_store></extended_sales_reports_weekly_store>
+                <extended_sales_reports_weekly_category></extended_sales_reports_weekly_category>
+                <extended_sales_reports_weekly_include_custom>1</extended_sales_reports_weekly_include_custom>
+            </extended_sales_reports_weekly>
+        </extended_sales_reports_notification_settings>
+    </default>
+</config>
+

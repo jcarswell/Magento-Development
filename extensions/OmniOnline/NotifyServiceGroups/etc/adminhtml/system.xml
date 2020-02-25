@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="service_groups" translate="label" sortOrder="500">
+            <label>Service Groups</label>
+        </tab>
+        <section id="service_groups_notification_settings" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Notification Settings</label>
+            <tab>service_groups</tab>
+            <resource>OmniOnline_NotifyServinceGroups::notification_config</resource>
+            <group id="email_addresses" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Addresses</label>
+                <field id="qcx_parade_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>QCX Parade</label>
+                    <comment>A comma-separated list of email addresses to notify when QCX Parade items are ordered.</comment>
+                </field>
+                <field id="qcx_exhibitor_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>QCX Exhibitor</label>
+                    <comment>A comma-separated list of email addresses to notify when QCX Exhibitor items are ordered.</comment>
+                </field>
+                <field id="it_services_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>IT Services</label>
+                    <comment>A comma-separated list of email addresses to notify when IT Services items are ordered.</comment>
+                </field>
+                <field id="electrical_services_email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Electrical Services</label>
+                    <comment>A comma-separated list of email addresses to notify when Electrical Services items are ordered.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
