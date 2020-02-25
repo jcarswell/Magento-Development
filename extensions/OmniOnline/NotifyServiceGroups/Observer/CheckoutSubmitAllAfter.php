@@ -104,12 +104,12 @@ class CheckoutSubmitAllAfter implements ObserverInterface
             mail($elec_email, 'There is a new Electrical Services request', $body, $headers);
         }
         if (!empty($orderInfo['qcx_parade'])) {
-            $body = "<h1>Electrical Services Request</h1>\n" . $clientInfo . $orderInfo['elec'];
-            mail($elec_email, 'There is a new Electrical Services request', $body, $headers);
+            $body = "<h1>QCX Parade Application</h1>\n" . $clientInfo . $orderInfo['qcx_parade'];
+            mail($elec_email, 'There is a new QCX Parade Application', $body, $headers);
         }
         if (!empty($orderInfo['qcx_exhibit'])) {
-            $body = "<h1>Electrical Services Request</h1>\n" . $clientInfo . $orderInfo['elec'];
-            mail($elec_email, 'There is a new Electrical Services request', $body, $headers);
+            $body = "<h1>New Order</h1>\n" . $clientInfo . $orderInfo['qcx_exhibit'];
+            mail($elec_email, 'There is a new order', $body, $headers);
         }
     }
 }
