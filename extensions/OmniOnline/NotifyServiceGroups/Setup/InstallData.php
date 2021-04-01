@@ -1,5 +1,5 @@
 <?php
-namespace OmniOnline\NotifyServiceGroups\Setup
+namespace OmniOnline\NotifyServiceGroups\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
@@ -29,7 +29,6 @@ class InstallData implements InstallDataInterface
                 'label' => 'Notify Service Group',
                 'input' => 'text',
                 'class' => '',
-                'source' => '',
                 'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'visible' => true,
                 'required' => false,
