@@ -12,6 +12,7 @@
 // REAL
 @evrazplace-orange: rgb(245,128,38);
 @real-main: @evrazplace-orange;
+@real-grey: rgb(79,83,84);
 
 //  Messages
 @message-global-note__color: @text__color;
@@ -29,9 +30,9 @@
 @message-global-caution__border-color: none;
 
 @header__background-color: false;
-@header-panel__background-color: @color-gray-middle4;
-@header-panel__text-color: @color-white;
-@header-icons-color: @color-gray46;
+@header-panel__background-color: @color-white;
+@header-panel__text-color: @real-grey;
+@header-icons-color: @real-grey;
 @header-icons-color-hover: @color-gray20;
 @customer-welcome__z-index: @dropdown-list__z-index + 1;
 
@@ -51,7 +52,7 @@
 
 //  Footer
 @footer__background-color: @real-main;
-@footer-links-separator-border-color: @color-wight;
+@footer-links-separator-border-color: @color-white;
 @footer-links-color: @color-white;
 @footer-links-color-hover: @color-gray20;
 @footer-links-color-current: @primary__color__light;
@@ -61,6 +62,7 @@
 @filter-link: @color-gray-darken4;
 @filter-link-hover: darken(@filter-link, 30%);
 @filter-quantity: @color-gray46;
+@copyright__background-color: #f5f5f5;
 
 //
 //  Common
@@ -88,6 +90,35 @@
             }
         }
     }
+
+    //
+    //  Main Content
+    //  ---------------------------------------------
+    #maincontent {
+        h4 {
+            padding: 10px;
+            background: #bfb1a1;
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        .real-button {
+            a, a:hover, a:active, a:visited, a:focus {
+                background: @real-main;
+                color: white;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 700;
+                padding: 10px 20px;
+                border-radius: 20px;
+                margin: 10px 20px 10px 0;
+                display: inline-block;
+            }
+        }
+    }
+
 
     //
     //  Header
@@ -238,6 +269,16 @@
 
     .page-footer {
         margin-top: @indent__m;
+
+        .col-2 {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 25px;
+        }
+
+        .border-left {
+            border-top: solid 1px @color-white;
+        }
     }
 
     .footer {
@@ -289,8 +330,10 @@
         .lib-css(color, @color-white);
         box-sizing: border-box;
         display: block;
-        padding: @indent__s;
+        // padding: @indent__s;
         text-align: center;
+		padding: 10px;
+		font-size: 12px;
     }
 
     .page-header,
@@ -335,6 +378,20 @@
                 &:extend(.abs-visually-hidden all);
             }
         }
+
+
+        .content {
+            .links > li {
+                background: none;
+                border-top: none;
+            }
+            .links{
+                a, a:hover, a:visited, a:focus { color: @color-white; }
+                strong { color: #ccc; }
+            }
+            border-top: none;
+        }
+
     }
     .page-header {
         .switcher {
@@ -502,6 +559,16 @@
         .panel.wrapper {
             border-bottom: 1px solid @secondary__color;
             .lib-css(background-color, @header-panel__background-color);
+            a {
+                color: #fff;
+                &:hover { color: #f9f9f9; }
+                &:visited {}
+            }
+            .customer-welcome li a {
+                color:#000;
+                &:visited {}
+            }
+
         }
 
         .header.panel:extend(.abs-add-clearfix-desktop all) {
@@ -650,7 +717,7 @@
     }
 
     .logo {
-        margin: -8px auto @indent__m 0;
+        margin: -8px auto -10px 0;
 
         img {
             max-height: inherit;
@@ -673,7 +740,20 @@
     .page-footer {
         .lib-css(background, @footer__background-color);
         margin-top: auto;
-        padding-bottom: @indent__m;
+        padding-bottom: 0px;
+
+        .border-left {
+            border-left: solid 1px #fff;
+            border-top: none;
+        }
+
+        .content {
+            margin: 0;
+            display: flex;
+            .col-2 {
+                width: 50%;
+            }
+        }
 
         .switcher {
             .options {
@@ -740,5 +820,10 @@
                 }
             }
         }
+        margin: 0;
+        display: flex;
+        .col-2 {
+            width: 50%;
+        }	
     }
 }

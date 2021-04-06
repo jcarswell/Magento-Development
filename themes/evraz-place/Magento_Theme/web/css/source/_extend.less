@@ -10,6 +10,37 @@
 
 @evrazplace-orange: rgb(245,128,38);
 @real-main: @evrazplace-orange; 
+@real-grey: rgb(79,83,84);
+
+@header__background-color: false;
+@header-panel__background-color: @color-white;
+@header-panel__text-color: @real-grey;
+@header-icons-color: @real-grey;
+@header-icons-color-hover: @color-gray20;
+
+@addto-color: @color-gray40;
+@addto-hover-color: @primary__color;
+@minicart-icons-color: @header-icons-color;
+@minicart-icons-color-hover: @header-icons-color-hover;
+
+@price-color: @color-gray34;
+@price-size: 22px;
+@price-size-desktop: 36px;
+
+//  Footer
+@footer__background-color: @real-main;
+@footer-links-separator-border-color: @color-white;
+@footer-links-color: @color-white;
+@footer-links-color-hover: @color-gray20;
+@footer-links-color-current: @primary__color__light;
+
+//  Layered navigation
+@filter-title-background-color: @color-gray94;
+@filter-link: @color-gray-darken4;
+@filter-link-hover: darken(@filter-link, 30%);
+@filter-quantity: @color-gray46;
+
+@copyright__background-color: #f5f5f5;
 
 & when (@media-common = true) {
    
@@ -91,7 +122,6 @@
     
     .page-header {
         .panel.wrapper{
-            background-color: @real-main;
             a {
                 color: #fff;
                 &:hover { color: #f9f9f9; }
