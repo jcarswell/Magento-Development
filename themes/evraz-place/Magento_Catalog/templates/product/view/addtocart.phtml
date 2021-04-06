@@ -13,7 +13,7 @@
 <?php if ($_product->isSaleable()): ?>
 <div class="box-tocart">
     <div class="fieldset">
-        <?php if ($block->shouldRenderQuantity()): ?>
+        <?php if ($block->shouldRenderQuantity() && ($_product->getExtensionAttributes()->getStockItem()->getMaxSaleQty() != 1)): ?>
         <div class="field qty">
             <label class="label" for="qty"><span><?= /* @escapeNotVerified */ __('Qty') ?></span></label>
             <div class="control">
