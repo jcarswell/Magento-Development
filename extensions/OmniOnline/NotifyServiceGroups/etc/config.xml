@@ -8,6 +8,12 @@
                 <it_services_email>jcarswell@evrazplace.com</it_services_email>
                 <electrical_services_email>jcarswell@evrazplace.com</electrical_services_email>
             </email_addresses>
+            <title>
+                <qcx_parade_email>QCX Parade Registration</qcx_parade_email>
+                <qcx_exhibitor_email>QCX Exhibitor Registration</qcx_exhibitor_email>
+                <it_services_email>IT Services Order</it_services_email>
+                <electrical_services_email>Electrical Services Order</electrical_services_email>
+            </title>
         </service_groups_notification_settings>
     </default>
 </config>
