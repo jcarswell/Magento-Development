@@ -34,45 +34,40 @@ class CheckoutSubmitAllAfter implements ObserverInterface
         $items = $order->getAllItems();
         $orderInfo = array();
         foreach ($items as $item) {
-            try {
-                $notifyIds = explode(',',$item->getProduct()->getData('notify_service_group'));
-                if (!empty($notifyIds)) {
-                    $itemInfo = '<table><tr><td colspan="2"><strong>' . $item->getName() . "</strong></td></tr>\n";
-                    $data = $item->getData();
-                    $itemInfo .= '<tr><td><strong>Quantity:</strong> ' . $data['qty_ordered'] . '</td>';
-                    $i = 0;
-                    $specialInstructions = '';
-                    foreach ($data['product_options']['options'] as $option) {
-                        if ($option['label'] == 'Special Instructions') {
-                            $specialInstructions = $option['print_value'];
-                        } else {
-                            if ($i % 2 == 1) {
-                                $itemInfo .= "</tr><tr>\n";
-                            }
-                            $itemInfo .= '<td><strong>' . $option['label'] . ':</strong> ' . $option['print_value'] . '</td>';
-                            $i++;
+            $notifyIds = explode(',',$item->getProduct()->getData('notify_service_group'));
+            $data = $item->getData();
+            if (!empty($notifyIds) && !empty($data['product_options']['options']) {
+                $itemInfo = '<table><tr><td colspan="2"><strong>' . $item->getName() . "</strong></td></tr>\n";
+                $itemInfo .= '<tr><td><strong>Quantity:</strong> ' . $data['qty_ordered'] . '</td>';
+                $i = 0;
+                $specialInstructions = '';
+                foreach ($data['product_options']['options'] as $option) {
+                    if ($option['label'] == 'Special Instructions') {
+                        $specialInstructions = $option['print_value'];
+                    } else {
+                        if ($i % 2 == 1) {
+                            $itemInfo .= "</tr><tr>\n";
                         }
+                        $itemInfo .= '<td><strong>' . $option['label'] . ':</strong> ' . $option['print_value'] . '</td>';
+                        $i++;
                     }
-                    if ($i % 2 == 1) {
-                        $itemInfo .= '<td>&nbsp;</td>';
-                    }
-                    if ($specialInstructions) {
-                            $itemInfo .= "</tr>\n<tr><td colspan=\"2\"><strong>Special Instructions:</strong> " . $specialInstructions . '</td>';
-                    }
-                    $itemInfo .= "</tr></table>\n<br>\n";
-                    foreach ($notifyIds as $notifyId) {
-                        $notifyGroup = $item->getProduct()->getResource()->getAttribute('notify_service_group')->getSource()->getOptionText($notifyId);
-                        if (!empty($notifyGroup)) {
-                            if (!isset($orderInfo[$notifyGroup])) {
-                                $orderInfo[$notifyGroup] = "";
-                            $orderInfo[$notifyGroup] .= $itemInfo;
-                            }
+                }
+                if ($i % 2 == 1) {
+                    $itemInfo .= '<td>&nbsp;</td>';
+                }
+                if ($specialInstructions) {
+                        $itemInfo .= "</tr>\n<tr><td colspan=\"2\"><strong>Special Instructions:</strong> " . $specialInstructions . '</td>';
+                }
+                $itemInfo .= "</tr></table>\n<br>\n";
+                foreach ($notifyIds as $notifyId) {
+                    $notifyGroup = $item->getProduct()->getResource()->getAttribute('notify_service_group')->getSource()->getOptionText($notifyId);
+                    if (!empty($notifyGroup) ) {
+                        if (!isset($orderInfo[$notifyGroup])) {
+                            $orderInfo[$notifyGroup] = "";
+                        $orderInfo[$notifyGroup] .= $itemInfo;
                         }
                     }
                 }
-            } 
-            catch (Exception $e) {
-                $notifyIds = NULL;
             }
         }
 
