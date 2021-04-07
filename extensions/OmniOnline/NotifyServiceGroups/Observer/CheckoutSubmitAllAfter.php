@@ -36,7 +36,7 @@ class CheckoutSubmitAllAfter implements ObserverInterface
         foreach ($items as $item) {
             $notifyIds = explode(',',$item->getProduct()->getData('notify_service_group'));
             $data = $item->getData();
-            if (!empty($notifyIds) && !empty($data['product_options']['options']) {
+            if (!empty($notifyIds) && !empty($data['product_options']['options'])) {
                 $itemInfo = '<table><tr><td colspan="2"><strong>' . $item->getName() . "</strong></td></tr>\n";
                 $itemInfo .= '<tr><td><strong>Quantity:</strong> ' . $data['qty_ordered'] . '</td>';
                 $i = 0;
