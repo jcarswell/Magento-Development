@@ -1,0 +1,25 @@
+{
+    "name": "REAL/CheckoutSidebar",
+    "description": "Adds late fees to selected products",
+    "authors": [
+        {
+            "name": "Josh Carswell",
+            "email": "jcarswell@real1884.ca"
+        }
+    ],
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "php": "~7.0.6|~7.3.0|~7.4.0"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "REAL\\CheckoutSidebar\\": ""
+        }
+    }
+}
