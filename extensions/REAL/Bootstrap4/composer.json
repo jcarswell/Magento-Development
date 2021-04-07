@@ -1,5 +1,5 @@
 {
-    "name": "REAL/CheckoutSidebar",
+    "name": "REAL/Bootstrap4",
     "description": "Adds late fees to selected products",
     "authors": [
         {
@@ -19,7 +19,7 @@
     "autoload": {
         "files": [ "registration.php" ],
         "psr-4": {
-            "REAL\\CheckoutSidebar\\": ""
+            "REAL\\Bootstrap4\\": ""
         }
     }
 }
