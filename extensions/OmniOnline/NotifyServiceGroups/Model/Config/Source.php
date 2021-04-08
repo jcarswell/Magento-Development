@@ -1,7 +1,6 @@
 <?php
- 
-namespace Company\Module\Model\Config\Source;
- 
+namespace OmniOnline\NotifyServiceGroups\Model\Config\Source;
+
 class Options extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
 {
     /**
