@@ -1,6 +1,8 @@
 <?php
 namespace REAL\CheckoutSidebar\Block;
 
+use Magento\Store\Model\ScopeInterface;
+
 class Cart extends \Magento\Framework\View\Element\Template
 {
     /** 
