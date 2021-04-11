@@ -3,7 +3,7 @@ namespace REAL\CheckoutSidebar\Block;
 
 use Magento\Store\Model\ScopeInterface;
 
-class Cart extends \Magento\Framework\View\Element\Template
+class Cart extends \Magento\Cms\Block\Widget\Block
 {
     /** 
      * Path to the config node
