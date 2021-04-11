@@ -8,6 +8,10 @@
                     <label>Checkout CMS Block</label>
                     <source_model>Magento\Cms\Model\ResourceModel\Block\Collection</source_model>
                 </field>
+                <field id="cart_cms_block" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cart CMS Block</label>
+                    <source_model>Magento\Cms\Model\ResourceModel\Block\Collection</source_model>
+                </field>
             </group>
         </section>
     </system>

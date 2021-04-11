@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="checkout.cart">
+                <referenceContainer name="checkout.cart.items">
+                    <block class="REAL\CheckoutSidebar\Block\Cart" name="checkout.cart.cms" before="checkout.cart.crosssell" />
+                </container>
+                <referenceContainer name="checkout.cart.noitems">
+                    <block class="REAL\CheckoutSidebar\Block\Cart" name="checkout.cart.cms" after="checkout.cart.empty" />
+                </container>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>
