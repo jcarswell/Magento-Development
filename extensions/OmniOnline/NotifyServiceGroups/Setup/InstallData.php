@@ -1,57 +1,60 @@
 <?php
 namespace OmniOnline\NotifyServiceGroups\Setup;
 
-use Magento\Eav\Setup\EavSetup;
-use Magento\Eav\Setup\EavSetupFactory;
 use Magento\Framework\Setup\InstallDataInterface;
-use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\ModuleDataSetupInterface;
 
 /**
 * @codeCoverageIgnore
 */
 class InstallData implements InstallDataInterface
 {
-    /***
+    /**
      * @var eavSetupFactory
      */
     private $eavSetupFactory;
 
-    /***
+    /**
      * Init
      * 
-     * @param EavSetupFactory $eavSetupFactory
+     * @param \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory
      */
-    public function __construct(EavSetupFactory $eavSetupFactory)
+    public function __construct(\Magento\Eav\Setup\EavSetupFactory $eavSetupFactory)
     {
         $this->eavSetupFactory = $eavSetupFactory;
     }
 
-    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    /**
+     * {@inheritdoc}
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
+     */
+    public function install(
+        \Magento\Framework\Setup\InstallDataInterface $setup,
+        \Magento\Framework\Setup\ModuleContextInterface $context
+        )
     {
-        $eavSetup = $this->eavSetupFactory->create(['setup' => $setup ]);
+        $eavSetup = $this->eavSetupFactory->create();
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENITITY,
-            'notify_service_group',
+            \OmniOnline\NotifyServiceGroups\Model\ConfigProvider::EAV_ENITIY,
             [
-                'type' => 'int',
-                'backend' => '',
-                'frontend' => '',
+                'group' => 'General',
+                'type' => 'varchar',
                 'label' => 'Notify Service Group',
                 'input' => 'select',
-                'group' => 'General',
-                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
-                'visible' => true,
+                'source' => 'OmniOnline\NotifyServiceGroups\Model\Source\Options',
+                'frontend' => '',
+                'backend' => '',
                 'required' => false,
                 'sort_order' => 50,
-                'default' => '',
+                'global' => \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_GLOBAL,
                 'is_used_in_grid' => false,
                 'is_visible_in_grid' => false,
                 'is_filterable_in_grid' => false,
-                'is_html_allowed_on_front' => false,
-                'visible_on_front' => false,
-                'source' => '\OmniOnline\NotifyServiceGroups\Model\Source\Options',
-                'apply_to' => 'simple,grouped,configurable,downloadable,virtual,bundeled'
+                'visible' => true,
+                'is_html_allowed_on_front' => true,
+                'visible_on_front' => false
             ]
         );
     }
