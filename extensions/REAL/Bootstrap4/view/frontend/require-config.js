@@ -1,10 +1,12 @@
 var config = {
-    paths: {
-        "jquery.bootstrap":"REAL_Bootstrap4/js/bootstrap.bundle.js"
+    map: {
+        '*': {
+            bootstrap4: 'REAL_Bootstrap4/js/bootstrap'
+        }
     },
     shim: {
-        'jquery.bootstrap':{
-            'deps':['jquery']
+        bootstrap4: {
+            'deps': ['jquery']
         }
     }
 };
