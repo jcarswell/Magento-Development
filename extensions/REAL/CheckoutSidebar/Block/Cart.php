@@ -49,7 +49,7 @@ class Cart extends \Magento\Framework\View\Element\Template
     public function getBlockConfig()
     {
         return $this->scopeConfiguration->getValue(
-            $this->PATH_CMS_BLOCK,
+            self::PATH_CMS_BLOCK,
             ScopeInterface::SCOPE_STORE
         );
     }
