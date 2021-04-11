@@ -43,8 +43,8 @@ class ConfigProvider implements ConfigProviderInterface
      */
     public function getConfig()
     {
-        $block->setData('block_id', $this->getBlockConfig());
-        $block->setTemplate('Magento_Cms::widget/static_block/default.phtml');
+        $this->cmsBlockWidget->setData('block_id', $this->getBlockConfig());
+        $this->cmsBlockWidget->setTemplate('Magento_Cms::widget/static_block/default.phtml');
         return [
             'cms_block' => $this->cmsBlockWidget->toHtml()
         ];
