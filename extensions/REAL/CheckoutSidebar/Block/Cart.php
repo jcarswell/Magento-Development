@@ -23,12 +23,14 @@ class Cart extends \Magento\Cms\Block\Widget\Block
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
+        \Magento\Cms\Model\Template\FilterProvider $filterProvider,
+        \Magento\Cms\Model\BlockFactory $blockFactory,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         array $data = []
         )
     {
         $this->scopeConfiguration = $scopeConfig;
-        parent::__construct($context, $data);
+        parent::__construct($context, $filterProvider, $blockFactory, $data);
     }
 
     /**
