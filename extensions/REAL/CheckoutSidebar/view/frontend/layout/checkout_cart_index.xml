@@ -6,10 +6,10 @@
             <referenceBlock name="checkout.cart">
                 <referenceContainer name="checkout.cart.items">
                     <block class="REAL\CheckoutSidebar\Block\Cart" name="checkout.cart.cms" before="checkout.cart.crosssell" />
-                </container>
+                </referenceContainer>
                 <referenceContainer name="checkout.cart.noitems">
                     <block class="REAL\CheckoutSidebar\Block\Cart" name="checkout.cart.cms" after="checkout.cart.empty" />
-                </container>
+                </referenceContainer>
             </referenceBlock>
         </referenceContainer>
     </body>
