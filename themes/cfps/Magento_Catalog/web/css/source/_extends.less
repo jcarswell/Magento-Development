@@ -1,7 +1,7 @@
 // /**
-// * @package real/evrazplace
-// * @author Josh Carswell <jcarswell@evrazplace.com>
-// * @copyright 2018 The Regina Exhibition Association Ltd.
+// * @package real/cfs
+// * @author Josh Carswell <Josh.Carswell@REAL1884.ca>
+// * @copyright 2021 The Regina Exhibition Association Ltd.
 // */
 
 //
@@ -9,10 +9,11 @@
 //  _____________________________________________
 
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m), print {
-    .content {
-        .page-layout-1column .product-info-main { width: 100%; }
-        .product-info-main { float: none; }
-        .product-info-main .product-add-form { max-width: 744px; }
-    }
+& when (@media-common = true){
+.page-layout-1column .product-info-main { width: 100%; }
+.product-info-main { float: none; }
+.product-info-main .product-add-form { max-width: 744px; }
+.product-options-bottom { float: none; }
+.product-options-warpper { float: none; }
+.downloads-no-separately { display: none; }
 }

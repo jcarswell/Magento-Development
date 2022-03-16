@@ -9,6 +9,7 @@
     <referenceBlock name="product.info.review" remove="true" />
     <referenceContainer name="product.info.social" remove="true" />
     <referenceContainer name="content.aside" remove="true" />
+    <referenceContainer name="product.info.media" remove="true" />
     <referenceBlock name="reviews.tab" remove="true" />
 
     <referenceContainer name="content">
